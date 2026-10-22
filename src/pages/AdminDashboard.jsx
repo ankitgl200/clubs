@@ -529,8 +529,8 @@ export default function AdminDashboard() {
             </h3>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+          <div className="table-responsive -mx-6 px-6 sm:mx-0 sm:px-0">
+            <table className="w-full text-left text-xs min-w-[550px]">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase text-[10px]">
                   <th className="pb-3 font-semibold">Club Name</th>
@@ -595,8 +595,8 @@ export default function AdminDashboard() {
             User Accounts ({allUsers.length})
           </h3>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+          <div className="table-responsive -mx-6 px-6 sm:mx-0 sm:px-0">
+            <table className="w-full text-left text-xs min-w-[550px]">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase text-[10px]">
                   <th className="pb-3 font-semibold">User</th>
@@ -653,8 +653,8 @@ export default function AdminDashboard() {
             </span>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+          <div className="table-responsive -mx-6 px-6 sm:mx-0 sm:px-0">
+            <table className="w-full text-left text-xs min-w-[550px]">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase text-[10px]">
                   <th className="pb-3 font-semibold">Resource Title</th>

@@ -133,7 +133,7 @@ export default function ClubsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
         
         {/* Category Pills with Lucide Icons */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 no-scrollbar scroll-smooth">
           {CATEGORIES.map((catObj) => {
             const Icon = catObj.icon;
             const isActive = category.toLowerCase() === catObj.name.toLowerCase();

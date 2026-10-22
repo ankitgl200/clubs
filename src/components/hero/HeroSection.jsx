@@ -96,7 +96,7 @@ export default function HeroSection({ stats }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-1"
           >
-            <h1 className="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-slate-900 dark:text-white drop-shadow-sm">
+            <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-slate-900 dark:text-white drop-shadow-sm">
               More Than
               <br />
               Clubs.
@@ -122,11 +122,11 @@ export default function HeroSection({ stats }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap items-center gap-4 pt-2"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full sm:w-auto"
           >
             <Link
               to="/clubs"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-brand-500 hover:bg-brand-600 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all group"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-brand-500 hover:bg-brand-600 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all group"
             >
               <span>Explore Clubs</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -134,7 +134,7 @@ export default function HeroSection({ stats }) {
 
             <button
               onClick={() => setIsVideoModalOpen(true)}
-              className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-100 bg-white/80 dark:bg-navy-800/80 hover:bg-white dark:hover:bg-navy-800 border border-slate-200/90 dark:border-slate-700/80 backdrop-blur-md shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-sm sm:text-base text-slate-800 dark:text-slate-100 bg-white/80 dark:bg-navy-800/80 hover:bg-white dark:hover:bg-navy-800 border border-slate-200/90 dark:border-slate-700/80 backdrop-blur-md shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group"
             >
               <div className="w-6 h-6 rounded-full bg-brand-500/10 dark:bg-brand-500/20 text-brand-500 flex items-center justify-center">
                 <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
@@ -153,19 +153,19 @@ export default function HeroSection({ stats }) {
         className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-auto"
       >
         <div className="glass-panel rounded-2xl sm:rounded-full p-4 sm:p-5 shadow-lg border border-slate-200/80 dark:border-slate-800/80 max-w-4xl backdrop-blur-xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-700/60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 md:divide-x divide-slate-200 dark:divide-slate-700/60">
             {displayStats.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <div
                   key={item.label}
-                  className={`flex items-center gap-3.5 ${idx !== 0 ? 'pt-3 sm:pt-0 sm:pl-6' : ''}`}
+                  className={`flex items-center gap-3 sm:gap-3.5 p-2 sm:p-0 ${idx !== 0 ? 'md:pl-6' : ''}`}
                 >
                   <div className="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-500/10 text-brand-500 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-display font-extrabold text-xl text-slate-900 dark:text-white tracking-tight">
+                    <div className="font-display font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white tracking-tight">
                       {item.value}
                     </div>
                     <div className="text-xs font-medium text-slate-500 dark:text-slate-400">

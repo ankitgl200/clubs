@@ -1121,7 +1121,7 @@ export default function ClubOwnerDashboard() {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 overflow-x-auto pb-px">
+      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 overflow-x-auto pb-px no-scrollbar scroll-smooth">
         {[
           { id: 'overview', label: 'Overview' },
           { id: 'members', label: `Members (${members.length})` },
@@ -1273,8 +1273,8 @@ export default function ClubOwnerDashboard() {
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+          <div className="table-responsive -mx-6 px-6 sm:mx-0 sm:px-0">
+            <table className="w-full text-left text-xs min-w-[650px]">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400 uppercase text-[10px]">
                   <th className="pb-3 font-semibold">Member</th>

@@ -408,7 +408,7 @@ export default function ClubDetailPage() {
             </div>
 
             {/* Join / Status Action Button */}
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 flex-shrink-0 w-full sm:w-auto">
               {isAdmin && (
                 <button
                   onClick={async () => {
@@ -426,7 +426,7 @@ export default function ClubDetailPage() {
                 </button>
               )}
               {isMember ? (
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <div className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400 font-semibold text-xs sm:text-sm border border-emerald-200 dark:border-emerald-800">
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Member ({userRole || 'Active'})</span>
@@ -463,7 +463,7 @@ export default function ClubDetailPage() {
               ) : (
                 <button
                   onClick={handleOpenApplyModal}
-                  className="px-8 py-3 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-lg shadow-brand-500/30 hover:-translate-y-0.5 transition-all"
+                  className="w-full sm:w-auto text-center px-8 py-3 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm shadow-lg shadow-brand-500/30 hover:-translate-y-0.5 transition-all"
                 >
                   Join Club
                 </button>
@@ -474,7 +474,7 @@ export default function ClubDetailPage() {
       </div>
 
       {/* Tabs Navigation (About, Resources, Events, Announcements, Members, Gallery) */}
-      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-px overflow-x-auto">
+      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-px overflow-x-auto no-scrollbar scroll-smooth">
         {[
           { id: 'about', label: 'About' },
           { id: 'resources', label: `Resources (${resources.length})` },
