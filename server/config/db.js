@@ -14,10 +14,7 @@ const NODE_ENV = (process.env.NODE_ENV || 'development').trim().toLowerCase();
 const MONGODB_MODE = (process.env.MONGODB_MODE || '').trim().toLowerCase();
 
 const LOCAL_URI = process.env.LOCAL_MONGODB_URI || 'mongodb://127.0.0.1:27017/club_studymyte';
-const ATLAS_URI =
-  process.env.ATLAS_MONGODB_URI ||
-  process.env.MONGODB_URI ||
-  'mongodb+srv://btkitsudyhub_db_user:pwy29Ro0rNaVVOBO@club00.e6gyjah.mongodb.net/club_studymyte?retryWrites=true&w=majority';
+const ATLAS_URI = process.env.ATLAS_MONGODB_URI || process.env.MONGODB_URI;
 
 const hasProdFlag = process.argv.includes('--prod') || process.argv.includes('--production') || process.argv.includes('--atlas');
 const hasLocalFlag = process.argv.includes('--local') || process.argv.includes('--dev');

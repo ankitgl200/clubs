@@ -13,6 +13,8 @@ const userSchema = new mongoose.Schema(
     avatar_url: { type: String, default: '' },
     avatar_public_id: { type: String, default: '' },
     is_admin: { type: Boolean, default: false },
+    email_verified: { type: Boolean, default: true },
+    is_verified: { type: Boolean, default: true },
     created_at: { type: Date, default: Date.now },
   },
   { timestamps: true }

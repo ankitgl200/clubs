@@ -234,6 +234,8 @@ class StorageEngine {
               role: isAdmin ? 'admin' : (u.role || 'student'),
               is_admin: isAdmin,
               platform_role: isAdmin ? 'admin' : (u.role || 'student'),
+              email_verified: true,
+              is_verified: true,
             };
           });
           saveItem(STORAGE_KEYS.USERS, normalizedUsers);

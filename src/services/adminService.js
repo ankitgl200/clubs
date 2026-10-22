@@ -9,7 +9,7 @@ export const adminService = {
     const clubApps = storageEngine.getClubApplications().filter((a) => a.status === 'pending');
     const memApps = storageEngine.getMembershipApplications().filter((a) => a.status === 'pending');
 
-    const totalMembers = memberships.length;
+    const totalMembers = Math.max(users.length, memberships.length);
 
     return {
       totalClubs: clubs.length,

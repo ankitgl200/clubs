@@ -35,8 +35,22 @@ export default function HomePage() {
     };
     refreshData();
     storageEngine.syncWithMongoDB().then(refreshData).catch(() => {});
+
+    const interval = setInterval(() => {
+      storageEngine.syncWithMongoDB().then(refreshData).catch(() => {});
+    }, 4000);
+
+    const onFocus = () => {
+      storageEngine.syncWithMongoDB().then(refreshData).catch(() => {});
+    };
+    window.addEventListener('focus', onFocus);
     window.addEventListener('cc_storage_changed', refreshData);
-    return () => window.removeEventListener('cc_storage_changed', refreshData);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', onFocus);
+      window.removeEventListener('cc_storage_changed', refreshData);
+    };
   }, []);
 
   const allClubs = clubService.getClubs(true);

@@ -77,6 +77,8 @@ app.post('/api/auth/register', async (req, res) => {
       avatar_url: avatar_url || '',
       avatar_public_id: avatar_public_id || '',
       is_admin: role === 'admin',
+      email_verified: true,
+      is_verified: true,
     });
 
     const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_SECRET, {
@@ -356,7 +358,15 @@ app.post('/api/auth/reset-password', async (req, res) => {
 app.get('/api/users', async (req, res) => {
   try {
     const users = await User.find().select('-password').sort({ created_at: -1 });
-    res.json(users);
+    const formatted = users.map((u) => {
+      const obj = u.toObject();
+      return {
+        ...obj,
+        email_verified: obj.email_verified !== false,
+        is_verified: obj.is_verified !== false,
+      };
+    });
+    res.json(formatted);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
